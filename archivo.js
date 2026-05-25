@@ -208,7 +208,7 @@ function mostrarExito(mensaje) {
     successDiv.textContent = mensaje;
     successDiv.classList.add('show');
 
-    // Ocultar el mensaje después de 3 segundos
+   
     setTimeout(() => {
         successDiv.classList.remove('show');
     }, 3000);
@@ -227,9 +227,9 @@ function registrarColaborador() {
         return;
     }
 
-    // Crear objeto del colaborador
+    
     const nuevoColaborador = {
-        id: Date.now(), // ID único basado en timestamp
+        id: Date.now(), 
         nombre: valores.nombre,
         apellido: valores.apellido,
         nombreCompleto: `${valores.nombre} ${valores.apellido}`,
@@ -237,19 +237,19 @@ function registrarColaborador() {
         email: valores.email
     };
 
-    // Agregar al array
+    
     colaboradores.push(nuevoColaborador);
 
-    // Limpiar formulario
+   
     limpiarFormulario();
 
-    // Mostrar mensaje de éxito
+   
     mostrarExito(`✓ ¡${nuevoColaborador.nombreCompleto} ha sido registrado exitosamente!`);
 
-    // Renderizar tabla
+    
     renderizarTabla(colaboradores);
 
-    // Actualizar contador
+   
     actualizarContador();
 }
 
