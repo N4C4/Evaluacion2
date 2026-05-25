@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Colaboradores</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="logo">📋</div>
+            <h1>Registro de Colaboradores</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Colaboradores</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sección del Formulario -->
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Registrar Nuevo Colaborador</h2>
+                <form id="formRegistro" class="form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ej: Juan"
+                            class="form-input"
+                        >
+                        <span class="error-message" id="errorNombre"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input 
+                            type="text" 
+                            id="apellido" 
+                            name="apellido" 
+                            placeholder="Ej: Pérez"
+                            class="form-input"
+                        >
+                        <span class="error-message" id="errorApellido"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cargo">Cargo:</label>
+                        <input 
+                            type="text" 
+                            id="cargo" 
+                            name="cargo" 
+                            placeholder="Ej: Gerente de Proyectos"
+                            class="form-input"
+                        >
+                        <span class="error-message" id="errorCargo"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Ej: juan.perez@empresa.cl"
+                            class="form-input"
+                        >
+                        <span class="error-message" id="errorEmail"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Registrar Colaborador</button>
+                </form>
+                <div class="success-message" id="successMessage"></div>
+            </div>
+        </section>
+
+        <!-- Sección de Búsqueda y Tabla -->
+        <section class="table-section">
+            <div class="table-container">
+                <h2>Listado de Colaboradores</h2>
+                
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="busqueda" 
+                        placeholder="Buscar por nombre o cargo..."
+                        class="search-input"
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="tablaColaboradores" class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Nombre Completo</th>
+                                <th>Cargo</th>
+                                <th>Correo Electrónico</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaBody">
+                            <!-- Se generará dinámicamente con JavaScript -->
+                        </tbody>
+                    </table>
+                    <div id="sinResultados" class="sin-resultados" style="display: none;">
+                        No se encontraron colaboradores.
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <p>Total de colaboradores: <strong id="totalColaboradores">0</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Empresa Región del Biobío. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="archivo.js"></script>
+</body>
+</html>
